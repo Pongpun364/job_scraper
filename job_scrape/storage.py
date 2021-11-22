@@ -51,7 +51,7 @@ import pathlib
 
 
     
-def df_to_csv(datas=None, name='.../links.csv',columns=None):
+def df_to_csv(datas=None, name='../links.csv',columns=None):
     if datas == None:
         datas = []
     print('datas ==',datas)
@@ -66,7 +66,7 @@ def df_to_csv(datas=None, name='.../links.csv',columns=None):
     df = df[columns]
     df =df.loc[~df.id.duplicated(keep='first')]
 #     df.set_index('id', inplace=True)
-    df.dropna(inplace=True)
+    # df.dropna(inplace=True)
     df.to_csv(name, index=False)
     return df
 

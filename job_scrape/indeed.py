@@ -1,21 +1,17 @@
-import random
+from os import link
+import sys
 import asyncio
-
-import pandas as pd
 from requests_html import HTML
 import itertools
 import re
 import time
-import pathlib
-import logging
-import structlog # pip install structlog
 from urllib.parse import urlparse
 # from ..storage import list_to_sql, df_from_sql, df_to_sql
-from ..logging import  set_arsenic_log_level
-from ..scraper import scraper
-from ..storage import df_to_csv
+from my_logging import  set_arsenic_log_level
+from scraper import scraper
+from storage import df_to_csv
 
-
+# print(sys.path)
 async def extract_id(url_path):
     regex = r"([0-9a-z]+)\Sfccid"
     my_match = re.findall(regex, url_path)
@@ -44,16 +40,17 @@ async def get_link_data(body):
             title = None
         try:
             path = result.attrs['href']
-            id_ = extract_id(path) 
+            id_ = await extract_id(path) 
         except:
             id_ = None
         
-        min_salary , max_salary = extract_salary(result)
+        min_salary , max_salary = await extract_salary(result)
         data = {
             'id' : id_,
             'title': title,
             'min_salary': min_salary,
-            'max_salary': max_salary
+            'max_salary': max_salary,
+            'scraped': 0
         }
         datas.append(data)
     return datas   
@@ -68,6 +65,7 @@ async def indeed_scraper(url, i=-1, timeout = 120, start=None, delay=15):
     body = await scraper(url,i=i, timeout = timeout, start=start, delay=delay)
 
     links = await get_link_data(body)
+    print('links ==', links)
     # product_data = await get_product_data(url, body )
     
     
@@ -136,8 +134,9 @@ def run_indeed():
     links = itertools.chain.from_iterable(links)
     links = list(links)
     link_columns = ['id', 'title', 'min_salary', 'max_salary', 'scraped']
-    df_to_csv(columns=link_columns)
+    df_to_csv(links, columns=link_columns)
 
 
 if __name__ == "__main__":
     run_indeed()
+    

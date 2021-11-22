@@ -3,7 +3,6 @@ import structlog # pip install structlog
 
 
 
-
 def set_arsenic_log_level(level = logging.WARNING):
     # Create logger
     logger = logging.getLogger('arsenic')
