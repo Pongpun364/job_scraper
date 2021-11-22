@@ -1,0 +1,5 @@
+venv/
+nbs/
+driver/
+.ipynb_checkpoints/
+db.sqlite3
