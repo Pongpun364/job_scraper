@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 # from ..storage import list_to_sql, df_from_sql, df_to_sql
 from my_logging import  set_arsenic_log_level
 from scraper import scraper
-from storage import df_to_csv
+from storage import df_from_sql, df_to_sql, list_to_sql
 from my_utils import extract_id, extract_salary,\
     firsttime_query, \
     get_list_urls, get_saved_urls
@@ -59,12 +59,10 @@ async def get_job_data(url,body):
 async def get_num_all_page(body):
     html_r = HTML(html=body)
     num_all_jobs = html_r.find('#searchCountPages', first=True).text
-
-    regex = r'[\d]+'
-    num_all_jobs = int(re.findall(regex,num_all_jobs)[1].replace(',',''))
-    num_all_pages = num_all_jobs // 15
+    regex = r'[\d,]+'
+    num_all_jobs = re.findall(regex,num_all_jobs)[1].replace(',','')
+    num_all_pages = int(num_all_jobs) // 15
     num_all_pages
-
     return num_all_pages
 
 
@@ -102,13 +100,13 @@ async def run(urls, start=None,first_time=False,extract_links=False,extract_jobd
         results.append(
             asyncio.create_task(indeed_scraper(url,first_time=first_time, 
             extract_links=extract_links, extract_jobdesc=extract_jobdesc, 
-            i=i, timeout=120, start=start ,delay = 10))
+            i=i, timeout=120, start=start ,delay = 5))
         )
     list_of_links = await asyncio.gather(*results)
     return list_of_links
 
 
-def run_indeed(query = 'python developer',first_time=False,
+async def run_indeed(query = 'python developer',first_time=False,
  extract_links=False, extract_jobdesc=False , 
  limit = 10, start_url=0):
     set_arsenic_log_level()
@@ -131,9 +129,9 @@ def run_indeed(query = 'python developer',first_time=False,
 
 
     # create tasks
-    results = asyncio.run(run(urls, start = start, 
+    results = await run(urls, start = start, 
     first_time=first_time,extract_links=extract_links,
-    extract_jobdesc=extract_jobdesc))
+    extract_jobdesc=extract_jobdesc)
 
     end = time.time() - start
     print('total time =', end)
@@ -151,6 +149,7 @@ def run_indeed(query = 'python developer',first_time=False,
         df_to_csv(jobdesc, columns=job_col,name='../job_desc.csv')
     if first_time:
         num_all_pages = results[0]['num_all_pages']
+        print('num_all_pages ==',num_all_pages)
         _ = firsttime_query(query=query, num_page = num_all_pages)
 
 
@@ -160,7 +159,16 @@ def run_indeed(query = 'python developer',first_time=False,
         links_df.loc[link_cond, 'scraped'] = 1
         links_df.to_csv('../links.csv', index=False)
 
+
+async def orchestrator(query = 'web developer'):
+    await run_indeed(query=query,first_time=True)
+    await asyncio.sleep(5)
+    await run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
+
+
+
 if __name__ == "__main__":
-    # run_indeed(query='javascript developer',first_time=True)
+    asyncio.run(orchestrator())
+    # run_indeed(query='web developer',first_time=True)
     # run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
     # run_indeed(extract_jobdesc=True,limit=2)
