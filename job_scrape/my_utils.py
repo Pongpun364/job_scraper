@@ -1,6 +1,6 @@
 import re
 import pandas as pd
-
+from storage import df_to_sql, df_from_sql, list_to_sql
 # print(sys.path)
 async def extract_id(url_path):
     regex = r"([0-9a-z]+)\Sfccid"
@@ -11,11 +11,13 @@ async def extract_id(url_path):
 
 async def extract_salary(result):
     data = result.find('.salary-snippet', first=True)
+    print('data = = ', data)
     if data != None:
         regex = r"[\d,]+"
         my_match = re.findall(regex, data.text)
         if not my_match:
             return None, None
+        print('match ==', my_match[0],my_match[1])
         return my_match[0].replace(',', '') , my_match[1].replace(',', '')
     return None, None
 
@@ -57,11 +59,7 @@ async def extract_salary(result):
 
 
 
-def firsttime_query(query='python developer', num_page = 0):
-    data_query = query.replace(' ','_')
-    data = [{'q_str': data_query ,'num_page': num_page}]
-    df = pd.DataFrame(data)
-    df.to_csv('../test.csv', index=False)
+def firsttime_query(query='python developer'):
     q_str = query.replace(' ','+')
     urls = [f'https://th.indeed.com/jobs?q={q_str}&start=0']
     return urls
@@ -74,7 +72,7 @@ def get_list_urls(limit=10,query='python developer',start_url=0):
     return urls
 
 def get_saved_urls(limit=10,query='python developer'):
-    links_df = pd.read_csv('../links.csv')
+    links_df = df_from_sql(table_name=f'{query}_link')
     urls = []
     scraped_id = []
     is_updated = False

@@ -2,7 +2,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy import inspect
 
-from .conf import DB_CONNECTION_STR
+from conf import DB_CONNECTION_STR
 
 conn = create_engine(DB_CONNECTION_STR)
 

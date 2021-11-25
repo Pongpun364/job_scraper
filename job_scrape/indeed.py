@@ -33,6 +33,7 @@ async def get_link_data(body):
             id_ = None
         
         min_salary , max_salary = await extract_salary(result)
+        print(min_salary,max_salary)
         data = {
             'id' : id_,
             'title': title,
@@ -75,7 +76,7 @@ async def indeed_scraper(url,first_time=False,extract_links=False,extract_jobdes
     num_all_pages = None
     if extract_links:
         links = await get_link_data(body)
-        print('links ==', links)
+        print(f'links({i}) ==', links)
     if extract_jobdesc:
         job_desc = await get_job_data(url,body)
     if first_time:
@@ -110,6 +111,7 @@ async def run_indeed(query = 'python developer',first_time=False,
  extract_links=False, extract_jobdesc=False , 
  limit = 10, start_url=0):
     set_arsenic_log_level()
+    query_name = query.replace(' ','_')
     start = time.time()
     urls = ['https://th.indeed.com/jobs?q=python+developer&start=0' ]
     scraped_id = []
@@ -119,7 +121,7 @@ async def run_indeed(query = 'python developer',first_time=False,
     if extract_links==True and first_time == False:
         urls = get_list_urls(limit=limit,query=query,start_url=start_url)
     if extract_jobdesc == True:
-        urls, scraped_id, is_updated  = get_saved_urls(limit=limit,query=query)
+        urls, scraped_id, is_updated  = get_saved_urls(limit=limit,query=query_name)
 
 
 
@@ -140,31 +142,41 @@ async def run_indeed(query = 'python developer',first_time=False,
         print(links)
         links = itertools.chain.from_iterable(links)
         links = list(links)
+        print('Final results =========', links)
         link_columns = ['id', 'title', 'min_salary', 'max_salary', 'scraped']
-        df_to_csv(links, columns=link_columns)
+        list_to_sql(links, table_name=f'{query_name}_link', columns=link_columns)
     
     if extract_jobdesc:
         jobdesc = [x['job_desc'] for x in results ]
         job_col = ['id', 'job_desc']
-        df_to_csv(jobdesc, columns=job_col,name='../job_desc.csv')
+        list_to_sql(jobdesc, table_name=f'{query_name}_job_desc', columns=job_col)
+
     if first_time:
         num_all_pages = results[0]['num_all_pages']
-        print('num_all_pages ==',num_all_pages)
-        _ = firsttime_query(query=query, num_page = num_all_pages)
+        
+        old_df = df_from_sql('query_note_table')
+        if old_df.empty:
+            old_df = pd.DataFrame([{'q_str':None, 'num_page': None}])
+        new_df = pd.DataFrame([{'q_str':f'{query_name}', 
+                'num_page': num_all_pages if num_all_pages < 20 else 20}])
+        df = pd.concat([old_df,new_df])
+        df.dropna(inplace=True)
+        df = df.loc[~df['q_str'].duplicated(keep='first')]
+        df_to_sql(df, table_name='query_note_table')
 
 
     if is_updated:
-        links_df = pd.read_csv('../links.csv')
+        links_df = df_from_sql(table_name=f'{query_name}_link')
         link_cond = links_df['id'].isin(scraped_id)
         links_df.loc[link_cond, 'scraped'] = 1
-        links_df.to_csv('../links.csv', index=False)
+        df_to_sql(links_df, table_name=f'{query_name}_link')
 
 
-async def orchestrator(query = 'web developer'):
-    await run_indeed(query=query,first_time=True)
-    await asyncio.sleep(5)
-    await run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
-
+async def orchestrator(query = 'python developer'):
+    # await run_indeed(query=query,first_time=True)
+    # await asyncio.sleep(5)
+    # await run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
+    await run_indeed(extract_jobdesc=True,limit=2)
 
 
 if __name__ == "__main__":
@@ -172,3 +184,9 @@ if __name__ == "__main__":
     # run_indeed(query='web developer',first_time=True)
     # run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
     # run_indeed(extract_jobdesc=True,limit=2)
+
+
+
+        #    query_name = query.replace(' ','+')
+        #     links_df = pd.DataFrame([{'q_str':f'{query_name}', 
+        #     'num_page': num_all_pages if num_all_pages < 20 else 20}])

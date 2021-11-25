@@ -35,7 +35,7 @@ async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     service = services.Chromedriver(binary=EXE_PATH)
     browser = browsers.Chrome()
     browser.capabilities = {
-        "goog:chromeOptions": {"args": ["--headless", "--disable-gpu"]}
+        "goog:chromeOptions": {"args": [ "--disable-gpu"]}
     }
     async with get_session(service, browser) as session:
         try:
