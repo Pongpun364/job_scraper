@@ -17,9 +17,19 @@ async def extract_salary(result):
         my_match = re.findall(regex, data.text)
         if not my_match:
             return None, None
-        print('match ==', my_match[0],my_match[1])
         return my_match[0].replace(',', '') , my_match[1].replace(',', '')
     return None, None
+
+async def extract_salary_one(result):
+    data = result.find('.salary-snippet', first=True)
+    print('data = = ', data)
+    if data != None:
+        regex = r"[\d,]+"
+        my_match = re.findall(regex, data.text)
+        if not my_match:
+            return None
+        return my_match[0].replace(',', '')
+    return None
 
 
 
@@ -76,13 +86,19 @@ def get_saved_urls(limit=10,query='python developer'):
     urls = []
     scraped_id = []
     is_updated = False
-
+    is_done = False
     if not links_df.empty:
         sub_link_df = links_df.copy()
         sub_link_df = sub_link_df[sub_link_df['scraped'] == 0]
-        sub_link_df = sub_link_df.sample(limit)
-        urls = [f'https://th.indeed.com/viewjob?jk={x}'for x in sub_link_df['id'].to_list()]
+        if sub_link_df.empty:
+            is_done = True
+            return urls, scraped_id, is_updated, is_done
+        try:
+            sub_link_df = sub_link_df.sample(limit)
+        except:
+            sub_link_df = sub_link_df
+        urls = [f'https://th.indeed.com/viewjob?jk={x}' for x in sub_link_df['id'].to_list()]
         scraped_id = sub_link_df.id.to_list()
         if len(urls) > 0:
             is_updated = True
-    return urls, scraped_id, is_updated
+    return urls, scraped_id, is_updated, is_done

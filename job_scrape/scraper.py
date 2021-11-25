@@ -1,12 +1,18 @@
 import asyncio
 from arsenic import get_session,browsers, services
 import pathlib
+from fake_useragent import UserAgent
 
 
 BASE_DIR = pathlib.Path().resolve()
 # print('BASE_DIR == ' ,BASE_DIR)
 EXE_PATH = str(BASE_DIR / "driver" / "chromedriver.exe")
 # print('EXE_PATH ==', EXE_PATH)
+
+
+
+async def get_user_agent():
+    return UserAgent(verify_ssl=False).random
 
 async def perform_scrape(session, url, delay):
     await session.get(url)
@@ -34,8 +40,9 @@ async def perform_scrape(session, url, delay):
 async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     service = services.Chromedriver(binary=EXE_PATH)
     browser = browsers.Chrome()
+    my_user_agent = await get_user_agent()
     browser.capabilities = {
-        "goog:chromeOptions": {"args": [ "--disable-gpu"]}
+        "goog:chromeOptions": {"args": ["--headless", "--disable-gpu",f'user-agent={my_user_agent}']}
     }
     async with get_session(service, browser) as session:
         try:

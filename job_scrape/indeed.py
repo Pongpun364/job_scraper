@@ -4,6 +4,7 @@ import asyncio
 from requests_html import HTML
 import itertools
 import re
+import random
 import time
 import pandas as pd
 from urllib.parse import urlparse
@@ -13,7 +14,8 @@ from scraper import scraper
 from storage import df_from_sql, df_to_sql, list_to_sql
 from my_utils import extract_id, extract_salary,\
     firsttime_query, \
-    get_list_urls, get_saved_urls
+    get_list_urls, get_saved_urls,\
+    extract_salary_one
 
 
 
@@ -21,6 +23,7 @@ from my_utils import extract_id, extract_salary,\
 async def get_link_data(body):
     datas = []
     html_r = HTML(html=body)
+    salary = None
     for result in html_r.find('.result'):
         try:
             title = result.find('.jobTitle', first=True).text
@@ -31,14 +34,17 @@ async def get_link_data(body):
             id_ = await extract_id(path) 
         except:
             id_ = None
-        
-        min_salary , max_salary = await extract_salary(result)
-        print(min_salary,max_salary)
+        try:
+            min_salary , max_salary = await extract_salary(result)
+        except:
+            salary = await extract_salary_one(result)
+        # print(min_salary,max_salary)
         data = {
             'id' : id_,
             'title': title,
             'min_salary': min_salary,
             'max_salary': max_salary,
+            'salary':salary,
             'scraped': 0
         }
         datas.append(data)
@@ -76,7 +82,7 @@ async def indeed_scraper(url,first_time=False,extract_links=False,extract_jobdes
     num_all_pages = None
     if extract_links:
         links = await get_link_data(body)
-        print(f'links({i}) ==', links)
+        # print(f'links({i}) ==', links)
     if extract_jobdesc:
         job_desc = await get_job_data(url,body)
     if first_time:
@@ -116,12 +122,13 @@ async def run_indeed(query = 'python developer',first_time=False,
     urls = ['https://th.indeed.com/jobs?q=python+developer&start=0' ]
     scraped_id = []
     is_updated = False
+    is_done = False
     if first_time:
         urls = firsttime_query(query=query)
     if extract_links==True and first_time == False:
         urls = get_list_urls(limit=limit,query=query,start_url=start_url)
     if extract_jobdesc == True:
-        urls, scraped_id, is_updated  = get_saved_urls(limit=limit,query=query_name)
+        urls, scraped_id, is_updated,is_done  = get_saved_urls(limit=limit,query=query_name)
 
 
 
@@ -139,11 +146,11 @@ async def run_indeed(query = 'python developer',first_time=False,
     print('total time =', end)
     if extract_links:
         links = [x['links'] for x in results ] # [[],[],[]]
-        print(links)
+        # print(links)
         links = itertools.chain.from_iterable(links)
         links = list(links)
-        print('Final results =========', links)
-        link_columns = ['id', 'title', 'min_salary', 'max_salary', 'scraped']
+        # print('Final results =========', links)
+        link_columns = ['id', 'title', 'min_salary', 'max_salary','salary', 'scraped']
         list_to_sql(links, table_name=f'{query_name}_link', columns=link_columns)
     
     if extract_jobdesc:
@@ -164,23 +171,51 @@ async def run_indeed(query = 'python developer',first_time=False,
         df = df.loc[~df['q_str'].duplicated(keep='first')]
         df_to_sql(df, table_name='query_note_table')
 
+        return num_all_pages
+
 
     if is_updated:
         links_df = df_from_sql(table_name=f'{query_name}_link')
         link_cond = links_df['id'].isin(scraped_id)
         links_df.loc[link_cond, 'scraped'] = 1
         df_to_sql(links_df, table_name=f'{query_name}_link')
+    
+    return is_done
 
 
 async def orchestrator(query = 'python developer'):
-    # await run_indeed(query=query,first_time=True)
-    # await asyncio.sleep(5)
-    # await run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
-    await run_indeed(extract_jobdesc=True,limit=2)
+    # run first time and collect the number of all pages
+    num_all_pages = await run_indeed(query=query,first_time=True,extract_links=True)
+    # collecting all the links from all the pages according to the num_all_pages given previous
+    await asyncio.sleep(5)
+    
+    if num_all_pages <= 10:
+        await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
+        await asyncio.sleep(7)
+    else: 
+        await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
+        await asyncio.sleep(6)
+        await run_indeed(extract_links=True,first_time=False,start_url=11,limit=10)
+        await asyncio.sleep(5)
+
+    # collecting all the job_data randomly 
+    num_all_job = num_all_pages * 15
+    num_iter = num_all_job // 10
+    my_num = [5,6,7,8,9,10]
+
+
+    for _ in range(num_iter):
+        await run_indeed(extract_jobdesc=True,limit=10)
+        is_done = await asyncio.sleep(random.choice(my_num))
+    
+    if is_done:
+        print('DONE ALL PROCESS, CONGRATES! ')
+        return
+
 
 
 if __name__ == "__main__":
-    asyncio.run(orchestrator())
+    asyncio.run(orchestrator(query='python developer'))
     # run_indeed(query='web developer',first_time=True)
     # run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
     # run_indeed(extract_jobdesc=True,limit=2)
