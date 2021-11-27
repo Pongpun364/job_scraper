@@ -18,6 +18,7 @@ from my_utils import extract_id, extract_salary,\
     extract_salary_one
 
 
+from data_cleaner import summary_data
 
 
 async def get_link_data(body):
@@ -184,34 +185,38 @@ async def run_indeed(query = 'python developer',first_time=False,
 
 
 async def orchestrator(query = 'python developer'):
-    # run first time and collect the number of all pages
-    num_all_pages = await run_indeed(query=query,first_time=True,extract_links=True)
-    # collecting all the links from all the pages according to the num_all_pages given previous
-    await asyncio.sleep(5)
+    # # run first time and collect the number of all pages
+    # num_all_pages = await run_indeed(query=query,first_time=True,extract_links=True)
+    # # collecting all the links from all the pages according to the num_all_pages given previous
+    # await asyncio.sleep(5)
     
-    if num_all_pages <= 10:
-        await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
-        await asyncio.sleep(7)
-    else: 
-        await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
-        await asyncio.sleep(6)
-        await run_indeed(extract_links=True,first_time=False,start_url=11,limit=10)
-        await asyncio.sleep(5)
+    # if num_all_pages <= 10:
+    #     await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
+    #     await asyncio.sleep(7)
+    # else: 
+    #     await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
+    #     await asyncio.sleep(6)
+    #     await run_indeed(extract_links=True,first_time=False,start_url=11,limit=10)
+    #     await asyncio.sleep(5)
 
-    # collecting all the job_data randomly 
-    num_all_job = num_all_pages * 15
-    num_iter = num_all_job // 10
-    my_num = [5,6,7,8,9,10]
+    # # collecting all the job_data randomly 
+    # num_all_job = num_all_pages * 15
+    # num_iter = num_all_job // 10
+    # my_num = [5,6,7,8,9,10]
 
 
-    for _ in range(num_iter):
-        await run_indeed(extract_jobdesc=True,limit=10)
-        is_done = await asyncio.sleep(random.choice(my_num))
+    # for _ in range(num_iter):
+    #     await run_indeed(extract_jobdesc=True,limit=10)
+    #     is_done = await asyncio.sleep(random.choice(my_num))
     
-    if is_done:
-        print('DONE ALL PROCESS, CONGRATES! ')
-        return
+    # if is_done:
 
+    #     print('DONE ALL PROCESS, CONGRATES! ')
+    #     return
+    start = time.time()
+    await summary_data(query=query)
+    print("TIME CONSUMED == ", time.time() - start)
+    
 
 
 if __name__ == "__main__":
