@@ -2,9 +2,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy import inspect
 
-from conf import DB_CONNECTION_STR
+from  conf import  get_settings
 
-conn = create_engine(DB_CONNECTION_STR)
+settings = get_settings()
+
+conn = create_engine(settings.db_connection_str)
 
 
 def verify_table_exists(table_name):

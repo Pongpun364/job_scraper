@@ -70,12 +70,14 @@ async def extract_salary_one(result):
 
 
 def firsttime_query(query='python developer'):
-    q_str = query.replace(' ','+')
+    q_str = query.replace(' ','%20')
+    print('query in function firsttime_query == ',query)
     urls = [f'https://th.indeed.com/jobs?q={q_str}&start=0']
     return urls
 
 def get_list_urls(limit=10,query='python developer',start_url=0):
     urls = []
+    print('query in function get_list_urls == ',query)
     q_str = query.replace(' ','+')
     for i in range(limit):
         urls.append(f'https://th.indeed.com/jobs?q={q_str}&start={(start_url+i)*10}')
@@ -89,7 +91,7 @@ def get_saved_urls(limit=10,query='python developer'):
     is_done = False
     if not links_df.empty:
         sub_link_df = links_df.copy()
-        sub_link_df = sub_link_df[sub_link_df['scraped'] == 0]
+        sub_link_df = sub_link_df[~(sub_link_df['id'].isnull()) & (sub_link_df['scraped'] == 0)]
         if sub_link_df.empty:
             is_done = True
             return urls, scraped_id, is_updated, is_done

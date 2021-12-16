@@ -1,5 +1,3 @@
-from os import link
-import sys
 import asyncio
 from requests_html import HTML
 import itertools
@@ -22,9 +20,20 @@ from data_cleaner import summary_data
 
 
 async def get_link_data(body):
+    if not body:
+        return [{
+            'id' : None,
+            'title': None,
+            'min_salary': None,
+            'max_salary': None,
+            'salary':None,
+            'scraped': 0
+        }]
     datas = []
     html_r = HTML(html=body)
     salary = None
+    min_salary = None
+    max_salary = None
     for result in html_r.find('.result'):
         try:
             title = result.find('.jobTitle', first=True).text
@@ -52,6 +61,11 @@ async def get_link_data(body):
     return datas   
 
 async def get_job_data(url,body):
+    if not body:
+        return {
+            'id':None,
+            'job_desc':None
+            }
     html_r = HTML(html=body)
     id_ = url.split('jk=')[1]
     try:
@@ -74,7 +88,8 @@ async def get_num_all_page(body):
     return num_all_pages
 
 
-async def indeed_scraper(url,first_time=False,extract_links=False,extract_jobdesc=False, i=-1, timeout = 120, start=None, delay=15):
+async def indeed_scraper(url,first_time=False,extract_links=False,
+extract_jobdesc=False, i=-1, timeout = 120, start=None, delay=15):
 
     body = await scraper(url,i=i, timeout = timeout, start=start, delay=delay)
 
@@ -83,9 +98,11 @@ async def indeed_scraper(url,first_time=False,extract_links=False,extract_jobdes
     num_all_pages = None
     if extract_links:
         links = await get_link_data(body)
-        # print(f'links({i}) ==', links)
+        print(f'links({i}) ==', links)
+
     if extract_jobdesc:
         job_desc = await get_job_data(url,body)
+
     if first_time:
         num_all_pages = await get_num_all_page(body)
 
@@ -108,7 +125,7 @@ async def run(urls, start=None,first_time=False,extract_links=False,extract_jobd
         results.append(
             asyncio.create_task(indeed_scraper(url,first_time=first_time, 
             extract_links=extract_links, extract_jobdesc=extract_jobdesc, 
-            i=i, timeout=120, start=start ,delay = 5))
+            i=i, timeout=60, start=start ,delay = 5))
         )
     list_of_links = await asyncio.gather(*results)
     return list_of_links
@@ -125,14 +142,19 @@ async def run_indeed(query = 'python developer',first_time=False,
     is_updated = False
     is_done = False
     if first_time:
+        print('query (run_indeed,first time) = ', query)
+        print('query_name (run_indeed,first time) = ', query_name)
         urls = firsttime_query(query=query)
     if extract_links==True and first_time == False:
+        print('query (run_indeed,extract_links) = ', query)
+        print('query_name (run_indeed,extract_links) = ', query_name)
         urls = get_list_urls(limit=limit,query=query,start_url=start_url)
     if extract_jobdesc == True:
         urls, scraped_id, is_updated,is_done  = get_saved_urls(limit=limit,query=query_name)
 
 
-
+    if is_done:
+        return is_done
 
 
     # print(urls)
@@ -147,12 +169,13 @@ async def run_indeed(query = 'python developer',first_time=False,
     print('total time =', end)
     if extract_links:
         links = [x['links'] for x in results ] # [[],[],[]]
-        # print(links)
+        print('link before itertool =', links)
         links = itertools.chain.from_iterable(links)
+
         links = list(links)
-        # print('Final results =========', links)
         link_columns = ['id', 'title', 'min_salary', 'max_salary','salary', 'scraped']
         list_to_sql(links, table_name=f'{query_name}_link', columns=link_columns)
+
     
     if extract_jobdesc:
         jobdesc = [x['job_desc'] for x in results ]
@@ -166,7 +189,7 @@ async def run_indeed(query = 'python developer',first_time=False,
         if old_df.empty:
             old_df = pd.DataFrame([{'q_str':None, 'num_page': None}])
         new_df = pd.DataFrame([{'q_str':f'{query_name}', 
-                'num_page': num_all_pages if num_all_pages < 20 else 20}])
+                'num_page': num_all_pages if num_all_pages < 30 else 30}])
         df = pd.concat([old_df,new_df])
         df.dropna(inplace=True)
         df = df.loc[~df['q_str'].duplicated(keep='first')]
@@ -187,40 +210,66 @@ async def run_indeed(query = 'python developer',first_time=False,
 async def orchestrator(query = 'python developer'):
     # # run first time and collect the number of all pages
     # num_all_pages = await run_indeed(query=query,first_time=True,extract_links=True)
+    my_num = [5,6,7,8,9,10]
+    # print('initialize query == ', query)
     # # collecting all the links from all the pages according to the num_all_pages given previous
     # await asyncio.sleep(5)
-    
+
+
+
+    # ### extract links from all pages
     # if num_all_pages <= 10:
-    #     await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
-    #     await asyncio.sleep(7)
-    # else: 
-    #     await run_indeed(extract_links=True,first_time=False,start_url=1,limit=10)
-    #     await asyncio.sleep(6)
-    #     await run_indeed(extract_links=True,first_time=False,start_url=11,limit=10)
-    #     await asyncio.sleep(5)
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
+    # elif num_all_pages > 10 and num_all_pages<=20: 
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=11,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=16,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    # else:
+    #     print('query (orchestrator) = ', query)
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=11,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=16,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=21,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
+    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=26,limit=5)
+    #     await asyncio.sleep(random.choice(my_num))
 
     # # collecting all the job_data randomly 
     # num_all_job = num_all_pages * 15
     # num_iter = num_all_job // 10
-    # my_num = [5,6,7,8,9,10]
+    num_iter = 5
 
 
-    # for _ in range(num_iter):
-    #     await run_indeed(extract_jobdesc=True,limit=10)
-    #     is_done = await asyncio.sleep(random.choice(my_num))
-    
-    # if is_done:
+    for _ in range(num_iter):
+        is_done = await run_indeed(query=query, extract_jobdesc=True,limit=6)
+        await asyncio.sleep(random.choice(my_num)) 
+        print("is_done variable ...  ", is_done)
+        if is_done:
+            start = time.time()
+            print("start finalize the process .....")
+            await summary_data(query=query)
+            print("TIME CONSUMED == ", time.time() - start)
+            print('DONE ALL PROCESS, CONGRATES! ')
+            return
+            
+    return
 
-    #     print('DONE ALL PROCESS, CONGRATES! ')
-    #     return
-    start = time.time()
-    await summary_data(query=query)
-    print("TIME CONSUMED == ", time.time() - start)
-    
 
 
 if __name__ == "__main__":
-    asyncio.run(orchestrator(query='python developer'))
+    asyncio.run(orchestrator(query='game developer'))
     # run_indeed(query='web developer',first_time=True)
     # run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
     # run_indeed(extract_jobdesc=True,limit=2)

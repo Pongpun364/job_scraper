@@ -1,4 +1,5 @@
 import asyncio
+from time import time
 from arsenic import get_session,browsers, services
 import pathlib
 from fake_useragent import UserAgent
@@ -31,24 +32,31 @@ async def perform_scrape(session, url, delay):
             print('i am out man !')
             break
         curr_heigth = iter_height
-    
+    try:
+        close_butt = await session.get_element('.popover-x-button-close')
+        await close_butt.click()
+    except:
+        pass
     return await session.get_page_source()
 
 
 
 
 async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
+    print("real time out used ==...", timeout)
     service = services.Chromedriver(binary=EXE_PATH)
     browser = browsers.Chrome()
     my_user_agent = await get_user_agent()
     browser.capabilities = {
-        "goog:chromeOptions": {"args": ["--headless", "--disable-gpu",f'user-agent={my_user_agent}']}
+        "goog:chromeOptions": {"args": [ "--headless", "--disable-gpu", f'user-agent={my_user_agent}']}
     }
     async with get_session(service, browser) as session:
         try:
             body = await asyncio.wait_for(perform_scrape(session, url, delay), timeout = timeout)
         except asyncio.TimeoutError:
             print('time out fuckkkk!!!')
-            return []   
-
+            return
+        except Exception as e:
+            print( ' what is this fuck ===============================================================', e)
+            return
         return body

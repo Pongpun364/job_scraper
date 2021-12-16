@@ -1,5 +1,4 @@
 import pandas as pd
-import pathlib
 from db import conn as db_conn , verify_table_exists
 
 

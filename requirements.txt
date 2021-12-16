@@ -1,0 +1,16 @@
+fastapi
+gunicorn
+uvicorn
+requests
+celery
+aiofiles
+redis
+cassandra-driver
+pandas
+requests_html
+selenium
+python-dotenv
+python-slugify
+fake-useragent
+arsenic
+

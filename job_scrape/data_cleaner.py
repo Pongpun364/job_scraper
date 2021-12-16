@@ -10,13 +10,15 @@ import nltk
 from collections import Counter
 from nltk import word_tokenize
 import matplotlib.pyplot as plt
-nltk.download('stopwords')
-nltk.download('punkt')
-from nltk.corpus import stopwords
+
+from conf import cache_stopword
+# nltk.download('stopwords')
+# nltk.download('punkt')
+# from nltk.corpus import stopwords
 
 from storage import df_from_sql, df_to_sql, list_to_sql
 
-stop_words = stopwords.words('english')
+stop_words = cache_stopword()
 technical_skills = ['python', 'c','r', 'c++','java','hadoop','scala','flask','pandas','spark','scikit-learn',
                     'numpy','php','sql','mysql','css','nltk','fastapi' , 'keras', 'pytorch','tensorflow',
                    'linux','Ruby','JavaScript','django','react','reactjs','ai','ui','tableau','blockchain','angular','backend',
@@ -64,13 +66,10 @@ def extract_salary2(row):
 
 
 def clean_data(desc):
-    if desc == None:
-        pass
-    else:
-        desc = word_tokenize(desc)
-        desc = [ word.lower() for word in desc if word.isalpha() and len(word) > 2]
-        regex = r"[a-zA-Z\d]+"
-        desc = list(set([ word for word in desc if word not in stop_words and re.findall(regex,word) ]))
+    desc = word_tokenize(desc)
+    desc = [ word.lower() for word in desc if word.isalpha() and len(word) > 2]
+    regex = r"[a-zA-Z\d]+"
+    desc = list(set([ word for word in desc if word not in stop_words and re.findall(regex,word) ]))
     return desc
 
 
@@ -143,6 +142,7 @@ async def summary_data(query = 'python developer'):
     job_df = df_from_sql(table_name = f'{query_name}_job_desc')
 
     new_df = pd.merge(job_df,link_df,how='outer',on='id')
+    new_df = new_df[~new_df['job_desc'].isnull()]
     new_df = new_df.apply(extract_salary2, axis="columns")
     tag_df = new_df['job_desc'].apply(clean_data)
     new_df['extracted_skill'] = tag_df.apply(Counter)
