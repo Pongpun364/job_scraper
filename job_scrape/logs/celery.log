@@ -1,0 +1,66 @@
+[2021-12-17 11:39:08,980: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-17 11:39:08,988: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-17 11:39:10,005: INFO/MainProcess] mingle: all alone
+[2021-12-17 11:39:10,025: INFO/MainProcess] celery@5ed3d7b2acef ready.
+[2021-12-17 11:41:07,358: INFO/MainProcess] Received task: scraper_task[58e4d296-ea68-45fb-aa14-ba54b0db61f1]  
+[2021-12-17 11:41:17,398: INFO/ForkPoolWorker-7] Task scraper_task[58e4d296-ea68-45fb-aa14-ba54b0db61f1] succeeded in 10.03740900000048s: True
+[2021-12-17 14:38:18,610: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-17 14:38:18,620: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-17 14:38:19,638: INFO/MainProcess] mingle: all alone
+[2021-12-17 14:38:19,672: INFO/MainProcess] celery@25e1ada625f6 ready.
+[2021-12-17 14:40:48,018: INFO/MainProcess] Received task: scraper_task[f54e3e32-ce25-4fd1-9480-fe3186f8a2ab]  
+[2021-12-17 14:41:08,040: INFO/ForkPoolWorker-7] Task scraper_task[f54e3e32-ce25-4fd1-9480-fe3186f8a2ab] succeeded in 20.0209835s: True
+[2021-12-17 14:50:39,497: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python3.9/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/usr/local/lib/python3.9/site-packages/celery/worker/consumer/consumer.py", line 599, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python3.9/site-packages/celery/worker/loops.py", line 83, in asynloop
+    next(loop)
+  File "/usr/local/lib/python3.9/site-packages/kombu/asynchronous/hub.py", line 364, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 1083, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 354, in on_readable
+    chan.handlers[type]()
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 688, in _receive
+    ret.append(self._receive_one(c))
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 698, in _receive_one
+    response = c.parse_response()
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1302, in parse_response
+    response = self._execute(conn, conn.read_response)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1283, in _execute
+    return conn.retry.call_with_retry(
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 35, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1285, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error))
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1272, in _disconnect_raise_connect
+    raise error
+  File "/usr/local/lib/python3.9/site-packages/redis/retry.py", line 32, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 1284, in <lambda>
+    lambda: command(*args, **kwargs),
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 748, in read_response
+    response = self._parser.read_response()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 318, in read_response
+    raw = self._buffer.readline()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 250, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 195, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2021-12-17 14:50:39,513: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 2.00 seconds... (1/100)
+
+[2021-12-17 14:50:41,519: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-17 14:50:41,525: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-17 14:50:45,341: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-17 14:50:45,348: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-17 14:50:46,361: INFO/MainProcess] mingle: all alone
+[2021-12-17 14:50:46,377: INFO/MainProcess] celery@25e1ada625f6 ready.
+[2021-12-17 14:50:52,952: INFO/MainProcess] Received task: scraper_task[ac5d8c05-a01f-44e1-913d-5fae1829527f]  
+[2021-12-17 14:51:12,988: INFO/ForkPoolWorker-7] Task scraper_task[ac5d8c05-a01f-44e1-913d-5fae1829527f] succeeded in 20.03291330000002s: True

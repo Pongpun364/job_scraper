@@ -2,10 +2,9 @@ fastapi
 gunicorn
 uvicorn
 requests
-celery
+celery==4.4.7
 aiofiles
 redis
-cassandra-driver
 pandas
 requests_html
 selenium
@@ -13,4 +12,6 @@ python-dotenv
 python-slugify
 fake-useragent
 arsenic
-
+sqlalchemy
+nltk
+matplotlib

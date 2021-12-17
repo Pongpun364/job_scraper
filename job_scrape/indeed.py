@@ -208,51 +208,52 @@ async def run_indeed(query = 'python developer',first_time=False,
 
 
 async def orchestrator(query = 'python developer'):
-    # # run first time and collect the number of all pages
-    # num_all_pages = await run_indeed(query=query,first_time=True,extract_links=True)
+    # run first time and collect the number of all pages
+    num_all_pages = await run_indeed(query=query,first_time=True,extract_links=True)
     my_num = [5,6,7,8,9,10]
-    # print('initialize query == ', query)
-    # # collecting all the links from all the pages according to the num_all_pages given previous
-    # await asyncio.sleep(5)
+    print('initialize query == ', query)
+    # collecting all the links from all the pages according to the num_all_pages given previous
+    await asyncio.sleep(5)
 
 
 
-    # ### extract links from all pages
-    # if num_all_pages <= 10:
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
-    # elif num_all_pages > 10 and num_all_pages<=20: 
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=11,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=16,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    # else:
-    #     print('query (orchestrator) = ', query)
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=11,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=16,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=21,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
-    #     await run_indeed(query=query, extract_links=True,first_time=False,start_url=26,limit=5)
-    #     await asyncio.sleep(random.choice(my_num))
+    ### extract links from all pages
+    if num_all_pages <= 10:
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
+    elif num_all_pages > 10 and num_all_pages<=20: 
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=11,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=16,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+    else:
+        print('query (orchestrator) = ', query)
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=1,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=6,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=11,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=16,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=21,limit=5)
+        await asyncio.sleep(random.choice(my_num))
+        await run_indeed(query=query, extract_links=True,first_time=False,start_url=26,limit=5)
+        await asyncio.sleep(random.choice(my_num))
 
-    # # collecting all the job_data randomly 
+
+    # collecting all the job_data randomly 
     # num_all_job = num_all_pages * 15
-    # num_iter = num_all_job // 10
-    num_iter = 5
+    # num_iter = (num_all_job // 6) + 1
+    # # num_iter = 5
 
 
-    for _ in range(num_iter):
+    while True:
         is_done = await run_indeed(query=query, extract_jobdesc=True,limit=6)
         await asyncio.sleep(random.choice(my_num)) 
         print("is_done variable ...  ", is_done)
@@ -264,7 +265,7 @@ async def orchestrator(query = 'python developer'):
             print('DONE ALL PROCESS, CONGRATES! ')
             return
             
-    return
+    # return
 
 
 
