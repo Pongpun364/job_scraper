@@ -30,15 +30,16 @@ RUN apt-get update && \
     pip install --no-cache-dir -r requirements.txt &&\
     apt-get remove -y --purge make gcc build-essential python3-dev python3-setuptools &&\
     apt-get autoremove -y &&\
-    rm -rf /var/lib/apt/lists/* &&\
-    chmod 775 /usr/src/app/database/ &&\
-    chmod 774 /usr/src/app/database/db.sqlite3
+    rm -rf /var/lib/apt/lists/*
+
 
 COPY . .
 
 COPY ./entrypoint.sh .
 
-RUN chmod +x /usr/src/app/entrypoint.sh
+RUN chmod +x /usr/src/app/entrypoint.sh &&\
+    chmod 775 /usr/src/app/database/ &&\
+    chmod 774 /usr/src/app/database/db.sqlite3
 
 
 
