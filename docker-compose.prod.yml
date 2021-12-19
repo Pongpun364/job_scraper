@@ -5,6 +5,7 @@ services:
     build:
       context: ./job_scrape
     command: gunicorn --worker-tmp-dir /dev/shm -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
+    restart: always
     volumes:
       - database:/usr/src/app/database
     ports:
@@ -20,6 +21,7 @@ services:
   worker:
     build: ./job_scrape
     command: celery worker --app=worker.celery --loglevel=info 
+    restart: always
     # --logfile=logs/celery.log
     volumes:
       - database:/usr/src/app/database
@@ -34,6 +36,7 @@ services:
 
   redis:
     image: redis:6-alpine
+    restart: always
 
 volumes:
   database:
