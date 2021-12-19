@@ -49,7 +49,7 @@ def list_to_sql(
 
 
 
-    
+
 # def df_to_csv(datas=None, name='../links.csv',columns=None):
 #     if datas == None:
 #         datas = []
@@ -68,4 +68,3 @@ def list_to_sql(
 #     # df.dropna(inplace=True)
 #     df.to_csv(name, index=False)
 #     return df
-

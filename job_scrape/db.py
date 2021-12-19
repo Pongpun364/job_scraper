@@ -6,7 +6,10 @@ from  conf import  get_settings
 
 settings = get_settings()
 
-conn = create_engine(settings.db_connection_str)
+conn = create_engine(
+    settings.db_connection_str,
+    connect_args={"check_same_thread": False},
+    )
 
 
 def verify_table_exists(table_name):

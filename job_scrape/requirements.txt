@@ -7,11 +7,9 @@ aiofiles
 redis
 pandas
 requests_html
-selenium
 python-dotenv
 python-slugify
 fake-useragent
 arsenic
 sqlalchemy
 nltk
-matplotlib

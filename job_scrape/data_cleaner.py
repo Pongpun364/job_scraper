@@ -9,7 +9,7 @@ import json
 import nltk
 from collections import Counter
 from nltk import word_tokenize
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 from conf import cache_stopword
 # nltk.download('stopwords')
@@ -150,4 +150,6 @@ async def summary_data(query = 'python developer'):
     new_df = new_df.apply(extract_experience, axis=1)
     new_df['extracted_skill'] = new_df['extracted_skill'].apply(clean_series_exp)
     new_df = new_df[['max_salary','min_salary','salary','extracted_skill','min_exp','max_exp']]
+    ### prevent  ValueError: Out of range float values are not JSON compliant
+    new_df = new_df.fillna('')
     df_to_sql(new_df, table_name=f'{query_name}_final')

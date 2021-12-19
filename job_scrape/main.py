@@ -4,8 +4,10 @@ from fastapi.responses import JSONResponse
 
 from conf import get_settings, Settings
 
-from worker import create_task
+from worker import create_task,add_scrape
 from celery.result import AsyncResult
+from storage import df_from_sql
+
 app = FastAPI()
 
 settings = get_settings()
@@ -40,15 +42,29 @@ async def test_auth(authorization = Header(None) , payload = Body(...) ,settings
     result = {"result": 'you are pass, Congrates !'}
     return JSONResponse(result)
 
-@app.post("/scraper/{num}", status_code=201)
-async def scraper(num: str):
-    task = create_task.delay(int(num)) ## สร้าง task ขึ้นมา เเละ return task id กลับไปก่อน
+@app.post("/scraper/{search_keyword}", status_code=201)
+async def scraper(search_keyword: str):
+    task = add_scrape.delay(search_keyword) ## สร้าง task ขึ้นมา เเละ return task id กลับไปก่อน
     result = {
         "task_id": task.id
     }
     print("result = ", result)
     return JSONResponse(result)
 
+
+@app.post("/test/{num}", status_code=201)
+async def test_add(num: str):
+    task = create_task.delay(num) ## สร้าง task ขึ้นมา เเละ return task id กลับไปก่อน
+    result = {
+        "task_id": task.id
+    }
+    # print("result = ", result)
+    return JSONResponse(result)
+
+# @app.get("/test_db/{table_name}")
+def get_table(table_name: str):
+    df = df_from_sql(table_name)
+    return df.to_json()
 
 @app.get("/check/{task_id}")
 def get_status(task_id: str):
@@ -58,4 +74,11 @@ def get_status(task_id: str):
         "task_status": task_result.status,
         "task_result": task_result.result
     }
-    return JSONResponse(result)
+    if task_result.status == "SUCCESS" and task_result.result != True:
+        table_name = task_result.result
+        print('table_name ....', table_name)
+        data = get_table(table_name)
+        return data
+    else:
+        return JSONResponse(result)
+
