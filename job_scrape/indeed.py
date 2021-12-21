@@ -80,7 +80,10 @@ async def get_job_data(url,body):
 
 async def get_num_all_page(body):
     html_r = HTML(html=body)
-    num_all_jobs = html_r.find('#searchCountPages', first=True).text
+    try:
+        num_all_jobs = html_r.find('#searchCountPages', first=True).text
+    except:
+        return 20
     regex = r'[\d,]+'
     num_all_jobs = re.findall(regex,num_all_jobs)[1].replace(',','')
     num_all_pages = int(num_all_jobs) // 15
@@ -121,11 +124,14 @@ extract_jobdesc=False, i=-1, timeout = 120, start=None, delay=15):
 
 async def run(urls, start=None,first_time=False,extract_links=False,extract_jobdesc=False):
     results = []
+    delay = 5
+    if first_time:
+        delay = 10
     for i, url in enumerate(urls):
         results.append(
             asyncio.create_task(indeed_scraper(url,first_time=first_time, 
             extract_links=extract_links, extract_jobdesc=extract_jobdesc, 
-            i=i, timeout=60, start=start ,delay = 5))
+            i=i, timeout=60, start=start ,delay = delay))
         )
     list_of_links = await asyncio.gather(*results)
     return list_of_links
