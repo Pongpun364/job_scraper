@@ -89,18 +89,22 @@ def get_saved_urls(limit=10,query='python developer'):
     scraped_id = []
     is_updated = False
     is_done = False
-    if not links_df.empty:
-        sub_link_df = links_df.copy()
-        sub_link_df = sub_link_df[~(sub_link_df['id'].isnull()) & (sub_link_df['scraped'] == 0)]
-        if sub_link_df.empty:
-            is_done = True
-            return urls, scraped_id, is_updated, is_done
-        try:
-            sub_link_df = sub_link_df.sample(limit)
-        except:
-            sub_link_df = sub_link_df
-        urls = [f'https://th.indeed.com/viewjob?jk={x}' for x in sub_link_df['id'].to_list()]
-        scraped_id = sub_link_df.id.to_list()
-        if len(urls) > 0:
-            is_updated = True
-    return urls, scraped_id, is_updated, is_done
+    is_failed = False
+    if links_df.empty:
+        is_done = True
+        is_failed = True
+        return urls, scraped_id, is_updated, is_done,is_failed
+    sub_link_df = links_df.copy()
+    sub_link_df = sub_link_df[~(sub_link_df['id'].isnull()) & (sub_link_df['scraped'] == 0)]
+    if sub_link_df.empty:
+        is_done = True
+        return urls, scraped_id, is_updated, is_done,is_failed
+    try:
+        sub_link_df = sub_link_df.sample(limit)
+    except:
+        sub_link_df = sub_link_df
+    urls = [f'https://th.indeed.com/viewjob?jk={x}' for x in sub_link_df['id'].to_list()]
+    scraped_id = sub_link_df.id.to_list()
+    if len(urls) > 0:
+        is_updated = True
+    return urls, scraped_id, is_updated, is_done,is_failed

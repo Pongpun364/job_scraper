@@ -147,6 +147,7 @@ async def run_indeed(query = 'python developer',first_time=False,
     scraped_id = []
     is_updated = False
     is_done = False
+    is_failed = False
     if first_time:
         print('query (run_indeed,first time) = ', query)
         print('query_name (run_indeed,first time) = ', query_name)
@@ -156,11 +157,11 @@ async def run_indeed(query = 'python developer',first_time=False,
         print('query_name (run_indeed,extract_links) = ', query_name)
         urls = get_list_urls(limit=limit,query=query,start_url=start_url)
     if extract_jobdesc == True:
-        urls, scraped_id, is_updated,is_done  = get_saved_urls(limit=limit,query=query_name)
+        urls, scraped_id, is_updated,is_done,is_failed  = get_saved_urls(limit=limit,query=query_name)
 
 
-    if is_done:
-        return is_done
+    if is_done or is_failed:
+        return is_done,is_failed
 
 
     # print(urls)
@@ -210,7 +211,7 @@ async def run_indeed(query = 'python developer',first_time=False,
         links_df.loc[link_cond, 'scraped'] = 1
         df_to_sql(links_df, table_name=f'{query_name}_link')
     
-    return is_done
+    return is_done,is_failed
 
 
 async def orchestrator(query = 'python developer'):
@@ -260,7 +261,10 @@ async def orchestrator(query = 'python developer'):
 
 
     while True:
-        is_done = await run_indeed(query=query, extract_jobdesc=True,limit=6)
+        is_done,is_failed = await run_indeed(query=query, extract_jobdesc=True,limit=6)
+        if is_failed:
+            print("sorry, i am failing ...  ")
+            return
         await asyncio.sleep(random.choice(my_num)) 
         print("is_done variable ...  ", is_done)
         if is_done:
