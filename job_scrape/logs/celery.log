@@ -2960,3 +2960,677 @@ Trying again in 2.00 seconds... (1/100)
 [2021-12-19 05:59:01,118: INFO/MainProcess] celery@4c3d9b354dce ready.
 [2021-12-19 05:59:12,933: INFO/MainProcess] Received task: scraper_task[9746bde7-1b22-41b4-b4cd-0da8a9ac211a]  
 [2021-12-19 05:59:32,959: INFO/ForkPoolWorker-7] Task scraper_task[9746bde7-1b22-41b4-b4cd-0da8a9ac211a] succeeded in 20.0230806999989s: True
+[2021-12-22 04:32:24,153: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 04:32:24,161: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 04:32:25,178: INFO/MainProcess] mingle: all alone
+[2021-12-22 04:32:25,189: INFO/MainProcess] celery@8ab7f13ea39b ready.
+[2021-12-22 04:44:38,592: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 04:44:38,604: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 04:44:39,621: INFO/MainProcess] mingle: all alone
+[2021-12-22 04:44:39,649: INFO/MainProcess] celery@7aa6da7ada56 ready.
+[2021-12-22 04:48:45,218: INFO/MainProcess] Received task: add_scrape[2cd8af69-2951-4a47-aa2a-3b9fef0ffba3]  
+[2021-12-22 04:48:45,222: WARNING/ForkPoolWorker-7] query (run_indeed,first time) =
+[2021-12-22 04:48:45,225: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:48:45,226: WARNING/ForkPoolWorker-7] query_name (run_indeed,first time) =
+[2021-12-22 04:48:45,227: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:48:45,228: WARNING/ForkPoolWorker-7] query in function firsttime_query ==
+[2021-12-22 04:48:45,228: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:48:45,230: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:48:45,231: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:48:45,703: WARNING/ForkPoolWorker-7] Error occurred during loading data. Trying to use cache server https://fake-useragent.herokuapp.com/browsers/0.1.11
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/usr/local/lib/python3.9/site-packages/fake_useragent/utils.py", line 99, in get_browsers
+    html = html.split('<table class="w3-table-all notranslate">')[1]
+IndexError: list index out of range
+[2021-12-22 04:48:51,096: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:48:51,096: WARNING/ForkPoolWorker-7] 4611
+[2021-12-22 04:49:01,117: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:01,139: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:01,141: WARNING/ForkPoolWorker-7] 4611
+[2021-12-22 04:49:01,144: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:01,360: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,361: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,365: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,365: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,369: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,369: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,001 to 23,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:01,373: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,374: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,378: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,378: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,381: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,382: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,385: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,386: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,390: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,390: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,394: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,395: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,398: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,399: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,402: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,402: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:01,406: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,406: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,409: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,410: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,413: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,413: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:01,416: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:01,417: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:01,420: WARNING/ForkPoolWorker-7] links(0) ==
+[2021-12-22 04:49:01,421: WARNING/ForkPoolWorker-7] [{'id': 'de9b546c6a5fdfcf', 'title': 'new\nนักวิชาการชำนาญการ', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '02c42b32176484d4', 'title': 'new\nmarketting online', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'fbb2dae1245fb3be', 'title': 'graphic design', 'min_salary': '20001', 'max_salary': '23000', 'salary': None, 'scraped': 0}, {'id': '32eec5384f25ef9b', 'title': 'นักศึกษาฝึกงานแผนกการตลาดออนไลน์ น่านและอุตรดิตถ์ ทางภาคเหนื...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '620cb4e83d4a6cdc', 'title': 'รับสมัคร นักศึกษาฝึกงาน ตำแหน่ง Digital Marketting , IT Sup....', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'b7a9fd47bcdf3962', 'title': 'Sale Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '3a32b1058925b7ee', 'title': 'Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:01,485: WARNING/ForkPoolWorker-7] 0 took 16.26341414451599 seconds
+[2021-12-22 04:49:01,486: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:49:01,487: WARNING/ForkPoolWorker-7] 16.26438045501709
+[2021-12-22 04:49:01,487: WARNING/ForkPoolWorker-7] link before itertool =
+[2021-12-22 04:49:01,488: WARNING/ForkPoolWorker-7] [[{'id': 'de9b546c6a5fdfcf', 'title': 'new\nนักวิชาการชำนาญการ', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '02c42b32176484d4', 'title': 'new\nmarketting online', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'fbb2dae1245fb3be', 'title': 'graphic design', 'min_salary': '20001', 'max_salary': '23000', 'salary': None, 'scraped': 0}, {'id': '32eec5384f25ef9b', 'title': 'นักศึกษาฝึกงานแผนกการตลาดออนไลน์ น่านและอุตรดิตถ์ ทางภาคเหนื...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '620cb4e83d4a6cdc', 'title': 'รับสมัคร นักศึกษาฝึกงาน ตำแหน่ง Digital Marketting , IT Sup....', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'b7a9fd47bcdf3962', 'title': 'Sale Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '3a32b1058925b7ee', 'title': 'Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}]]
+[2021-12-22 04:49:01,676: WARNING/ForkPoolWorker-7] initialize query ==
+[2021-12-22 04:49:01,677: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:06,684: WARNING/ForkPoolWorker-7] query (run_indeed,extract_links) =
+[2021-12-22 04:49:06,686: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:06,689: WARNING/ForkPoolWorker-7] query_name (run_indeed,extract_links) =
+[2021-12-22 04:49:06,691: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:06,693: WARNING/ForkPoolWorker-7] query in function get_list_urls ==
+[2021-12-22 04:49:06,696: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:06,698: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:06,700: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:06,718: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:06,719: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:06,725: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:06,726: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:06,732: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:06,733: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:06,739: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:06,740: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:09,840: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:09,841: WARNING/ForkPoolWorker-7] 282
+[2021-12-22 04:49:14,499: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:14,500: WARNING/ForkPoolWorker-7] 4645
+[2021-12-22 04:49:14,847: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:14,853: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:14,854: WARNING/ForkPoolWorker-7] 282
+[2021-12-22 04:49:14,854: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:14,858: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:14,858: WARNING/ForkPoolWorker-7] 2417
+[2021-12-22 04:49:14,928: WARNING/ForkPoolWorker-7] links(4) ==
+[2021-12-22 04:49:14,929: WARNING/ForkPoolWorker-7] []
+[2021-12-22 04:49:14,931: WARNING/ForkPoolWorker-7] 4 took 8.247198820114136 seconds
+[2021-12-22 04:49:15,054: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:15,055: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:15,608: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:15,608: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:19,511: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:19,519: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:19,520: WARNING/ForkPoolWorker-7] 4645
+[2021-12-22 04:49:19,521: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:19,709: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,710: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,713: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,713: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,716: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,717: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,720: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,720: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,723: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,723: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:19,727: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,728: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,731: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,731: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,734: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,735: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:19,739: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,739: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,742: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,743: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,746: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,747: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,750: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,751: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:19,754: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,755: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:19,758: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,759: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,762: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:19,762: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:19,764: WARNING/ForkPoolWorker-7] links(2) ==
+[2021-12-22 04:49:19,765: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:19,765: WARNING/ForkPoolWorker-7] 2 took 13.08150839805603 seconds
+[2021-12-22 04:49:19,864: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:19,870: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:19,871: WARNING/ForkPoolWorker-7] 2417
+[2021-12-22 04:49:19,871: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:20,051: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,052: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,056: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,056: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,060: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,060: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,063: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,064: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:20,067: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,068: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,071: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,072: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,075: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,076: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,077: WARNING/ForkPoolWorker-7] links(0) ==
+[2021-12-22 04:49:20,078: WARNING/ForkPoolWorker-7] [{'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:20,079: WARNING/ForkPoolWorker-7] 0 took 13.39461636543274 seconds
+[2021-12-22 04:49:20,079: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:20,084: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:20,084: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:20,084: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:20,285: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,286: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,289: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,290: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,293: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,293: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,297: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,297: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,301: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,301: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,305: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,306: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,309: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,310: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,313: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,314: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,317: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,318: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,321: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,321: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,324: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,324: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,327: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,328: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:20,332: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,332: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,335: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,336: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,339: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,339: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,341: WARNING/ForkPoolWorker-7] links(1) ==
+[2021-12-22 04:49:20,341: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:20,342: WARNING/ForkPoolWorker-7] 1 took 13.65787672996521 seconds
+[2021-12-22 04:49:20,614: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:20,637: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:20,638: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:20,639: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:20,863: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,864: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,867: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,868: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,872: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,872: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,876: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,876: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,880: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,880: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,884: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,884: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,887: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,887: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,890: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,891: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,894: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,895: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,897: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,898: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,901: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,901: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,904: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,905: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:20,908: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,908: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:20,912: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,912: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,915: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:20,916: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:20,918: WARNING/ForkPoolWorker-7] links(3) ==
+[2021-12-22 04:49:20,918: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:20,919: WARNING/ForkPoolWorker-7] 3 took 14.234832525253296 seconds
+[2021-12-22 04:49:20,920: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:49:20,920: WARNING/ForkPoolWorker-7] 14.235651016235352
+[2021-12-22 04:49:20,921: WARNING/ForkPoolWorker-7] link before itertool =
+[2021-12-22 04:49:20,921: WARNING/ForkPoolWorker-7] [[{'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], []]
+[2021-12-22 04:49:27,033: WARNING/ForkPoolWorker-7] query (run_indeed,extract_links) =
+[2021-12-22 04:49:27,035: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:27,036: WARNING/ForkPoolWorker-7] query_name (run_indeed,extract_links) =
+[2021-12-22 04:49:27,037: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:27,038: WARNING/ForkPoolWorker-7] query in function get_list_urls ==
+[2021-12-22 04:49:27,038: WARNING/ForkPoolWorker-7] marketting
+[2021-12-22 04:49:27,039: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:27,039: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:27,047: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:27,048: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:27,058: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:27,059: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:27,068: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:27,069: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:27,080: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:27,081: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:37,917: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:37,918: WARNING/ForkPoolWorker-7] 4645
+[2021-12-22 04:49:37,998: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:37,998: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:38,142: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:38,143: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:38,511: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:38,512: WARNING/ForkPoolWorker-7] 4645
+[2021-12-22 04:49:38,966: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:38,966: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:42,932: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:42,936: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:42,937: WARNING/ForkPoolWorker-7] 4645
+[2021-12-22 04:49:42,937: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:43,005: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:43,012: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:43,013: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:43,015: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:43,155: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,155: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,159: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,159: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,162: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,163: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,167: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,168: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,171: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,172: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,176: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,176: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,180: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,180: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,184: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,184: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,188: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,188: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,191: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,192: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,195: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,195: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,198: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,199: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:43,202: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,203: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,206: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,207: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,209: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,210: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,212: WARNING/ForkPoolWorker-7] links(1) ==
+[2021-12-22 04:49:43,212: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:43,213: WARNING/ForkPoolWorker-7] 1 took 16.180336713790894 seconds
+[2021-12-22 04:49:43,214: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:43,224: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:43,224: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:43,225: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:43,412: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,413: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,417: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,419: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,423: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,426: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,432: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,433: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,441: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,442: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,448: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,449: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,456: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,457: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,464: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,466: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,475: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,476: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,483: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,484: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,490: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,492: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,497: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,498: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:43,504: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,505: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,513: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,515: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,521: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,522: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,527: WARNING/ForkPoolWorker-7] links(2) ==
+[2021-12-22 04:49:43,528: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:43,529: WARNING/ForkPoolWorker-7] 2 took 16.49604845046997 seconds
+[2021-12-22 04:49:43,539: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:43,546: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:43,550: WARNING/ForkPoolWorker-7] 4645
+[2021-12-22 04:49:43,553: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:43,744: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,744: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,748: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,748: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,752: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,753: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,756: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,757: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,760: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,761: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,765: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,766: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,769: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,769: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,772: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,773: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,778: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,778: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,782: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,782: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,786: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,786: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,790: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,791: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:43,795: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,795: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,799: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,800: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,803: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,804: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,807: WARNING/ForkPoolWorker-7] links(4) ==
+[2021-12-22 04:49:43,808: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:43,809: WARNING/ForkPoolWorker-7] 4 took 16.776298999786377 seconds
+[2021-12-22 04:49:43,971: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,972: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,976: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,976: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,979: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,980: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,983: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,983: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,987: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,987: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:43,990: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,991: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,994: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,994: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:43,997: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:43,998: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:44,002: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,002: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,006: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,006: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,009: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,010: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,014: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,014: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:44,019: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,019: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:44,023: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,023: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,027: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,028: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,030: WARNING/ForkPoolWorker-7] links(3) ==
+[2021-12-22 04:49:44,031: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:44,031: WARNING/ForkPoolWorker-7] 3 took 16.998795986175537 seconds
+[2021-12-22 04:49:44,032: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:44,037: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:44,037: WARNING/ForkPoolWorker-7] 4471
+[2021-12-22 04:49:44,037: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:44,264: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,266: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,270: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,271: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,276: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,277: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,283: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,284: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,291: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,291: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:44,297: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,298: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,303: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,304: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,309: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,310: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='20,000 to 25,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:44,316: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,316: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,321: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,322: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,326: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,327: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,332: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,333: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='13,000 to 16,000 บาทต่อสัปดาห์' class=('salary-snippet',)>
+[2021-12-22 04:49:44,338: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,339: WARNING/ForkPoolWorker-7] <Element 'div' aria-label='15,000 to 20,000 บาทต่อเดือน' class=('salary-snippet',)>
+[2021-12-22 04:49:44,344: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,345: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,351: WARNING/ForkPoolWorker-7] data = =
+[2021-12-22 04:49:44,352: WARNING/ForkPoolWorker-7] None
+[2021-12-22 04:49:44,354: WARNING/ForkPoolWorker-7] links(0) ==
+[2021-12-22 04:49:44,358: WARNING/ForkPoolWorker-7] [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]
+[2021-12-22 04:49:44,358: WARNING/ForkPoolWorker-7] 0 took 17.325963020324707 seconds
+[2021-12-22 04:49:44,359: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:49:44,360: WARNING/ForkPoolWorker-7] 17.32670021057129
+[2021-12-22 04:49:44,360: WARNING/ForkPoolWorker-7] link before itertool =
+[2021-12-22 04:49:44,361: WARNING/ForkPoolWorker-7] [[{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}], [{'id': 'fbcc33823151905a', 'title': 'การตลาด Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8d0e970c90a1a5a2', 'title': 'เจ้าหน้าที่การตลาด (Marketting Officer)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '567ef8b0499a6f00', 'title': 'web master/web admin supervisor (katanyu brand)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd011b9c03eed6aed', 'title': 'new\nSocia Media Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '282108c88245dafb', 'title': 'sales executive', 'min_salary': '15000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '6dd6a3f880a570d6', 'title': 'new\nE-commerce & OTA Marketing', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '06665b97f63ad6c5', 'title': 'Online Marketting', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '26d4a5d12871bf7d', 'title': 'web admin (sony thai) สมัครพร้อมสัมภาษณ์ทันที', 'min_salary': '20000', 'max_salary': '25000', 'salary': None, 'scraped': 0}, {'id': '641b481901899ede', 'title': 'Customer Service Officer', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '13da8ef7f0159088', 'title': 'Sup. Tele Marketting Morter', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '8a6df5140135645e', 'title': 'Sales & Marketting ด่วน!!!', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': 'd73c168bf518001d', 'title': 'Support Marketting', 'min_salary': '13000', 'max_salary': '16000', 'salary': None, 'scraped': 0}, {'id': '7a43d210846991ca', 'title': 'marketing executive', 'min_salary': '15000', 'max_salary': '20000', 'salary': None, 'scraped': 0}, {'id': 'c6cc3ee92cb809ab', 'title': 'ประกาศด่วน! รับสมัครพนักงาน Tele Marketting ทำงานจันทร์-ศุกร...', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}, {'id': '4f6ee50d68e783e7', 'title': 'นักศึกษาฝึกงาน สาขา Graphic Design (ฝึกงานที่ แจ้งวัฒนะ 10)', 'min_salary': None, 'max_salary': None, 'salary': None, 'scraped': 0}]]
+[2021-12-22 04:49:44,548: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:44,548: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:44,554: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:44,554: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:44,561: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:44,561: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:44,571: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:44,572: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:44,584: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:44,585: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:44,595: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:49:44,596: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:49:50,636: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:50,637: WARNING/ForkPoolWorker-7] 1519
+[2021-12-22 04:49:50,891: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:50,891: WARNING/ForkPoolWorker-7] 1344
+[2021-12-22 04:49:51,064: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:51,064: WARNING/ForkPoolWorker-7] 1500
+[2021-12-22 04:49:51,250: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:51,251: WARNING/ForkPoolWorker-7] 1930
+[2021-12-22 04:49:51,333: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:51,333: WARNING/ForkPoolWorker-7] 1133
+[2021-12-22 04:49:51,857: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:49:51,858: WARNING/ForkPoolWorker-7] 1364
+[2021-12-22 04:49:55,649: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:55,653: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:55,654: WARNING/ForkPoolWorker-7] 1519
+[2021-12-22 04:49:55,654: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:55,790: WARNING/ForkPoolWorker-7] 2 took 11.271627426147461 seconds
+[2021-12-22 04:49:55,897: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:55,909: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:55,911: WARNING/ForkPoolWorker-7] 1344
+[2021-12-22 04:49:55,912: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:56,067: WARNING/ForkPoolWorker-7] 0 took 11.5483717918396 seconds
+[2021-12-22 04:49:56,070: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:56,078: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:56,079: WARNING/ForkPoolWorker-7] 1500
+[2021-12-22 04:49:56,079: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:56,483: WARNING/ForkPoolWorker-7] 5 took 11.964317798614502 seconds
+[2021-12-22 04:49:56,484: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:56,485: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:56,493: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:56,496: WARNING/ForkPoolWorker-7] 1133
+[2021-12-22 04:49:56,497: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:56,500: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:56,501: WARNING/ForkPoolWorker-7] 1930
+[2021-12-22 04:49:56,502: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:56,656: WARNING/ForkPoolWorker-7] 1 took 12.137134790420532 seconds
+[2021-12-22 04:49:56,696: WARNING/ForkPoolWorker-7] 4 took 12.177532196044922 seconds
+[2021-12-22 04:49:56,867: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:49:56,872: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:49:56,872: WARNING/ForkPoolWorker-7] 1364
+[2021-12-22 04:49:56,873: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:49:56,995: WARNING/ForkPoolWorker-7] 3 took 12.47680377960205 seconds
+[2021-12-22 04:49:56,996: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:49:56,997: WARNING/ForkPoolWorker-7] 12.477641820907593
+[2021-12-22 04:50:07,181: WARNING/ForkPoolWorker-7] is_done variable ...
+[2021-12-22 04:50:07,184: WARNING/ForkPoolWorker-7] False
+[2021-12-22 04:50:07,226: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:07,227: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:07,234: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:07,234: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:07,241: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:07,241: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:07,248: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:07,249: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:07,256: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:07,257: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:07,264: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:07,265: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:10,635: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:10,635: WARNING/ForkPoolWorker-7] 1783
+[2021-12-22 04:50:13,496: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:13,497: WARNING/ForkPoolWorker-7] 4086
+[2021-12-22 04:50:13,568: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:13,569: WARNING/ForkPoolWorker-7] 1494
+[2021-12-22 04:50:13,727: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:13,728: WARNING/ForkPoolWorker-7] 966
+[2021-12-22 04:50:13,879: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:13,879: WARNING/ForkPoolWorker-7] 916
+[2021-12-22 04:50:14,043: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:14,061: WARNING/ForkPoolWorker-7] 1614
+[2021-12-22 04:50:15,646: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:15,666: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:15,669: WARNING/ForkPoolWorker-7] 1783
+[2021-12-22 04:50:15,671: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:15,776: WARNING/ForkPoolWorker-7] 2 took 8.589562177658081 seconds
+[2021-12-22 04:50:18,505: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:18,517: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:18,519: WARNING/ForkPoolWorker-7] 4086
+[2021-12-22 04:50:18,520: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:18,577: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:18,585: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:18,586: WARNING/ForkPoolWorker-7] 1494
+[2021-12-22 04:50:18,586: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:18,690: WARNING/ForkPoolWorker-7] 5 took 11.503163814544678 seconds
+[2021-12-22 04:50:18,722: WARNING/ForkPoolWorker-7] 0 took 11.53529953956604 seconds
+[2021-12-22 04:50:18,734: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:18,739: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:18,740: WARNING/ForkPoolWorker-7] 966
+[2021-12-22 04:50:18,740: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:18,869: WARNING/ForkPoolWorker-7] 3 took 11.682074069976807 seconds
+[2021-12-22 04:50:18,885: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:18,890: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:18,890: WARNING/ForkPoolWorker-7] 916
+[2021-12-22 04:50:18,891: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:19,010: WARNING/ForkPoolWorker-7] 1 took 11.822996854782104 seconds
+[2021-12-22 04:50:19,077: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:19,083: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:19,084: WARNING/ForkPoolWorker-7] 1614
+[2021-12-22 04:50:19,084: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:19,256: WARNING/ForkPoolWorker-7] 4 took 12.06905198097229 seconds
+[2021-12-22 04:50:19,257: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:50:19,257: WARNING/ForkPoolWorker-7] 12.069876909255981
+[2021-12-22 04:50:27,476: WARNING/ForkPoolWorker-7] is_done variable ...
+[2021-12-22 04:50:27,478: WARNING/ForkPoolWorker-7] False
+[2021-12-22 04:50:27,526: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:27,527: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:27,533: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:27,534: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:27,540: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:27,541: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:27,547: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:27,548: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:27,555: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:27,555: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:27,562: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:27,563: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:34,807: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:34,808: WARNING/ForkPoolWorker-7] 936
+[2021-12-22 04:50:35,022: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:35,022: WARNING/ForkPoolWorker-7] 2010
+[2021-12-22 04:50:35,029: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:35,030: WARNING/ForkPoolWorker-7] 2206
+[2021-12-22 04:50:35,058: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:35,058: WARNING/ForkPoolWorker-7] 1262
+[2021-12-22 04:50:35,275: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:35,276: WARNING/ForkPoolWorker-7] 2477
+[2021-12-22 04:50:36,336: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:36,336: WARNING/ForkPoolWorker-7] 1196
+[2021-12-22 04:50:39,820: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:39,829: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:39,830: WARNING/ForkPoolWorker-7] 936
+[2021-12-22 04:50:39,830: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:39,958: WARNING/ForkPoolWorker-7] 4 took 12.476441860198975 seconds
+[2021-12-22 04:50:40,032: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:40,037: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:40,037: WARNING/ForkPoolWorker-7] 2010
+[2021-12-22 04:50:40,038: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:40,040: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:40,044: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:40,045: WARNING/ForkPoolWorker-7] 2206
+[2021-12-22 04:50:40,045: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:40,068: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:40,073: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:40,074: WARNING/ForkPoolWorker-7] 1262
+[2021-12-22 04:50:40,074: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:40,185: WARNING/ForkPoolWorker-7] 3 took 12.703474760055542 seconds
+[2021-12-22 04:50:40,239: WARNING/ForkPoolWorker-7] 1 took 12.757450819015503 seconds
+[2021-12-22 04:50:40,296: WARNING/ForkPoolWorker-7] 2 took 12.814542293548584 seconds
+[2021-12-22 04:50:40,297: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:40,302: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:40,302: WARNING/ForkPoolWorker-7] 2477
+[2021-12-22 04:50:40,303: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:40,431: WARNING/ForkPoolWorker-7] 0 took 12.950141668319702 seconds
+[2021-12-22 04:50:41,343: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:50:41,364: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:50:41,367: WARNING/ForkPoolWorker-7] 1196
+[2021-12-22 04:50:41,369: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:50:41,533: WARNING/ForkPoolWorker-7] 5 took 14.052083015441895 seconds
+[2021-12-22 04:50:41,534: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:50:41,535: WARNING/ForkPoolWorker-7] 14.053327560424805
+[2021-12-22 04:50:51,780: WARNING/ForkPoolWorker-7] is_done variable ...
+[2021-12-22 04:50:51,783: WARNING/ForkPoolWorker-7] False
+[2021-12-22 04:50:51,840: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:51,841: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:51,852: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:51,852: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:51,864: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:51,865: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:51,874: WARNING/ForkPoolWorker-7] real time out used ==...
+[2021-12-22 04:50:51,875: WARNING/ForkPoolWorker-7] 60
+[2021-12-22 04:50:58,533: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:58,534: WARNING/ForkPoolWorker-7] 878
+[2021-12-22 04:50:58,647: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:58,648: WARNING/ForkPoolWorker-7] 1370
+[2021-12-22 04:50:58,885: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:58,888: WARNING/ForkPoolWorker-7] 968
+[2021-12-22 04:50:59,535: WARNING/ForkPoolWorker-7] curr_heght ==
+[2021-12-22 04:50:59,538: WARNING/ForkPoolWorker-7] 858
+[2021-12-22 04:51:03,547: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:51:03,552: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:51:03,553: WARNING/ForkPoolWorker-7] 878
+[2021-12-22 04:51:03,553: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:51:03,669: WARNING/ForkPoolWorker-7] 0 took 11.883618593215942 seconds
+[2021-12-22 04:51:03,670: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:51:03,676: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:51:03,677: WARNING/ForkPoolWorker-7] 1370
+[2021-12-22 04:51:03,677: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:51:03,809: WARNING/ForkPoolWorker-7] 2 took 12.023681879043579 seconds
+[2021-12-22 04:51:03,902: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:51:03,907: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:51:03,907: WARNING/ForkPoolWorker-7] 968
+[2021-12-22 04:51:03,908: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:51:04,027: WARNING/ForkPoolWorker-7] 3 took 12.241598844528198 seconds
+[2021-12-22 04:51:04,568: WARNING/ForkPoolWorker-7] 1 time of sleep
+[2021-12-22 04:51:04,588: WARNING/ForkPoolWorker-7] iter heght ==
+[2021-12-22 04:51:04,591: WARNING/ForkPoolWorker-7] 858
+[2021-12-22 04:51:04,593: WARNING/ForkPoolWorker-7] i am out man !
+[2021-12-22 04:51:04,724: WARNING/ForkPoolWorker-7] 1 took 12.938591480255127 seconds
+[2021-12-22 04:51:04,724: WARNING/ForkPoolWorker-7] total time =
+[2021-12-22 04:51:04,725: WARNING/ForkPoolWorker-7] 12.93953800201416
+[2021-12-22 04:51:12,951: WARNING/ForkPoolWorker-7] is_done variable ...
+[2021-12-22 04:51:12,953: WARNING/ForkPoolWorker-7] False
+[2021-12-22 04:51:18,005: WARNING/ForkPoolWorker-7] is_done variable ...
+[2021-12-22 04:51:18,008: WARNING/ForkPoolWorker-7] True
+[2021-12-22 04:51:18,010: WARNING/ForkPoolWorker-7] start finalize the process .....
+[2021-12-22 04:51:18,185: WARNING/ForkPoolWorker-7] TIME CONSUMED ==
+[2021-12-22 04:51:18,185: WARNING/ForkPoolWorker-7] 0.17459893226623535
+[2021-12-22 04:51:18,185: WARNING/ForkPoolWorker-7] DONE ALL PROCESS, CONGRATES!
+[2021-12-22 04:51:18,189: INFO/ForkPoolWorker-7] Task add_scrape[2cd8af69-2951-4a47-aa2a-3b9fef0ffba3] succeeded in 152.96876280000288s: 'marketting_final'

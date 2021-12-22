@@ -48,7 +48,7 @@ async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     browser = browsers.Chrome()
     my_user_agent = await get_user_agent()
     browser.capabilities = {
-        "goog:chromeOptions": {"args": [ "--disable-dev-shm-usage","--no-sandbox", "--headless", "--disable-gpu", f'user-agent={my_user_agent}', "--verbose"]}
+        "goog:chromeOptions": {"args": [ "--whitelisted-ips=","--disable-dev-shm-usage","--no-sandbox", "--headless", "--disable-gpu", f'user-agent={my_user_agent}', "--verbose"]}
     }
     async with get_session(service, browser) as session:
         try:
