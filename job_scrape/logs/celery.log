@@ -3634,3 +3634,19 @@ IndexError: list index out of range
 [2021-12-22 04:51:18,185: WARNING/ForkPoolWorker-7] 0.17459893226623535
 [2021-12-22 04:51:18,185: WARNING/ForkPoolWorker-7] DONE ALL PROCESS, CONGRATES!
 [2021-12-22 04:51:18,189: INFO/ForkPoolWorker-7] Task add_scrape[2cd8af69-2951-4a47-aa2a-3b9fef0ffba3] succeeded in 152.96876280000288s: 'marketting_final'
+[2021-12-22 09:26:35,038: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 09:26:35,048: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 09:26:36,068: INFO/MainProcess] mingle: all alone
+[2021-12-22 09:26:36,092: INFO/MainProcess] celery@b79592252705 ready.
+[2021-12-22 10:24:39,163: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 10:24:39,169: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 10:24:40,185: INFO/MainProcess] mingle: all alone
+[2021-12-22 10:24:40,195: INFO/MainProcess] celery@17e5dfdad8cc ready.
+[2021-12-22 10:25:59,820: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 10:25:59,829: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 10:26:00,852: INFO/MainProcess] mingle: all alone
+[2021-12-22 10:26:00,892: INFO/MainProcess] celery@168d7a8e1278 ready.
+[2021-12-22 10:30:41,559: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-12-22 10:30:41,569: INFO/MainProcess] mingle: searching for neighbors
+[2021-12-22 10:30:42,587: INFO/MainProcess] mingle: all alone
+[2021-12-22 10:30:42,596: INFO/MainProcess] celery@6bd87be60946 ready.

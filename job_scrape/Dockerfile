@@ -39,8 +39,8 @@ COPY ./entrypoint.sh .
 
 RUN chmod +x /usr/src/app/entrypoint.sh &&\
     chmod 775 /usr/src/app/database/ &&\
-    chmod 774 /usr/src/app/database/db.sqlite3
-
+    chmod 774 /usr/src/app/database/db.sqlite3 &&\
+    chmod -R 777 /usr/src/app/uploads/
 
 
 CMD [ "/usr/src/app/entrypoint.sh" ]

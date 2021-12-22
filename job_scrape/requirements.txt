@@ -13,3 +13,4 @@ fake-useragent
 arsenic
 sqlalchemy
 nltk
+pillow
