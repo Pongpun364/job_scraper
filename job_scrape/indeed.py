@@ -141,7 +141,7 @@ async def run_indeed(query = 'python developer',first_time=False,
  extract_links=False, extract_jobdesc=False , 
  limit = 10, start_url=0):
     set_arsenic_log_level()
-    query_name = query.replace(' ','_')
+    query_name = query.strip().replace(' ','_')
     start = time.time()
     urls = ['https://th.indeed.com/jobs?q=python+developer&start=0' ]
     scraped_id = []

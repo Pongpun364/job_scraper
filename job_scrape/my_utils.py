@@ -70,7 +70,7 @@ async def extract_salary_one(result):
 
 
 def firsttime_query(query='python developer'):
-    q_str = query.replace(' ','%20')
+    q_str = query.strip().replace(' ','%20')
     print('query in function firsttime_query == ',query)
     urls = [f'https://th.indeed.com/jobs?q={q_str}&start=0']
     return urls
@@ -78,7 +78,7 @@ def firsttime_query(query='python developer'):
 def get_list_urls(limit=10,query='python developer',start_url=0):
     urls = []
     print('query in function get_list_urls == ',query)
-    q_str = query.replace(' ','+')
+    q_str = query.strip().replace(' ','+')
     for i in range(limit):
         urls.append(f'https://th.indeed.com/jobs?q={q_str}&start={(start_url+i)*10}')
     return urls

@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import re
 import json
-
+import asyncio
 import nltk
 from collections import Counter
 from nltk import word_tokenize
@@ -107,6 +107,11 @@ def extract_experience(row):
         exp_ = result.split('-')
         min_exp = exp_[0].strip()
         max_exp = exp_[1].strip()
+        try:
+            int(min_exp)
+            int(max_exp)
+        except:
+            return row
         if int(min_exp) > 18 or int(max_exp) > 18 :
             return row
         row['min_exp'] = min_exp
@@ -115,12 +120,21 @@ def extract_experience(row):
         exp_ = result.split('to')
         min_exp = exp_[0].strip()
         max_exp = exp_[1].strip()
+        try:
+            int(min_exp)
+            int(max_exp)
+        except:
+            return row
         if int(min_exp) > 18 or int(max_exp) > 18 :
             return row
         row['min_exp'] = min_exp
         row['max_exp'] = max_exp
     else:
         min_exp = result.strip()
+        try:
+            int(min_exp)
+        except:
+            return row
         if int(min_exp) > 18:
             return row
         row['min_exp'] = min_exp
@@ -136,7 +150,7 @@ def clean_series_exp(x):
     
 
 async def summary_data(query = 'python developer'):
-    query_name = query.replace(' ','_')
+    query_name = query.replace(' ','_').strip()
     link_df = df_from_sql(table_name = f'{query_name}_link')
     link_df.replace([None], np.nan, inplace=True)
     job_df = df_from_sql(table_name = f'{query_name}_job_desc')
@@ -153,3 +167,6 @@ async def summary_data(query = 'python developer'):
     ### prevent  ValueError: Out of range float values are not JSON compliant
     new_df = new_df.fillna('')
     df_to_sql(new_df, table_name=f'{query_name}_final')
+
+if __name__=="__main__":
+    asyncio.run(summary_data(query='Marketing'))
