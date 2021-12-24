@@ -150,7 +150,7 @@ def clean_series_exp(x):
     
 
 async def summary_data(query = 'python developer'):
-    query_name = query.replace(' ','_').strip()
+    query_name = query.strip().replace(' ','_')
     link_df = df_from_sql(table_name = f'{query_name}_link')
     link_df.replace([None], np.nan, inplace=True)
     job_df = df_from_sql(table_name = f'{query_name}_job_desc')
