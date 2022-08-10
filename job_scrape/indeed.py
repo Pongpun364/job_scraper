@@ -282,7 +282,7 @@ def perform_scrape(query='game developer'):
     return
 
 if __name__ == "__main__":
-    perform_scrape(query='game developer')
+    perform_scrape(query='painter')
     # run_indeed(query='web developer',first_time=True)
     # run_indeed(extract_links=True,first_time=False,start_url=1,limit=2)
     # run_indeed(extract_jobdesc=True,limit=2)

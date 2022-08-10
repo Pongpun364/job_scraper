@@ -10,6 +10,7 @@ import uuid
 
 BASE_DIR = pathlib.Path().resolve()
 IMAGE_DIR = BASE_DIR / "uploads"
+EXE_PATH = str(BASE_DIR / "driver" / "chromedriver.exe")
 
 test_url = "https://th.indeed.com/jobs?q=javascript%20developer&start=0"
 
@@ -49,7 +50,7 @@ async def perform_scrape(session, url, delay):
 async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     
     print("real time out used ==...", timeout)
-    service = services.Chromedriver()
+    service = services.Chromedriver(binary=EXE_PATH)
     browser = browsers.Chrome()
     my_user_agent = await get_user_agent()
     browser.capabilities = {

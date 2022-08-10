@@ -4,3 +4,4 @@ driver/
 .ipynb_checkpoints/
 db.sqlite3
 .env.prod
+__pycache__

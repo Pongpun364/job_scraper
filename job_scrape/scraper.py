@@ -6,15 +6,16 @@ from fake_useragent import UserAgent
 
 
 BASE_DIR = pathlib.Path().resolve()
-# print('BASE_DIR == ' ,BASE_DIR)
+print('BASE_DIR == ' ,BASE_DIR)
 EXE_PATH = str(BASE_DIR / "driver" / "chromedriver.exe")
-# print('EXE_PATH ==', EXE_PATH)
+print('EXE_PATH ==', EXE_PATH)
 
 
 
 async def get_user_agent():
     return UserAgent(verify_ssl=False).random
 
+# reference is in nbs: "webscrape asynchronous.ipynb"
 async def perform_scrape(session, url, delay):
     await session.get(url)
     
@@ -44,7 +45,7 @@ async def perform_scrape(session, url, delay):
 
 async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     print("real time out used ==...", timeout)
-    service = services.Chromedriver()
+    service = services.Chromedriver(binary=EXE_PATH)
     browser = browsers.Chrome()
     my_user_agent = await get_user_agent()
     browser.capabilities = {
