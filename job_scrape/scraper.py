@@ -45,7 +45,7 @@ async def perform_scrape(session, url, delay):
 
 async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     print("real time out used ==...", timeout)
-    service = services.Chromedriver(binary=EXE_PATH)
+    service = services.Chromedriver()
     browser = browsers.Chrome()
     my_user_agent = await get_user_agent()
     browser.capabilities = {

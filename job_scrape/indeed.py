@@ -40,8 +40,10 @@ async def get_link_data(body):
         except:
             title = None
         try:
-            path = result.attrs['href']
-            id_ = await extract_id(path) 
+            class_result = list(result.attrs['class'])
+            id_ = [x for x in class_result if x.startswith('job')][0]
+            id_ = id_.split('_')[1]
+
         except:
             id_ = None
         try:
@@ -105,6 +107,7 @@ extract_jobdesc=False, i=-1, timeout = 120, start=None, delay=15):
 
     if extract_jobdesc:
         job_desc = await get_job_data(url,body)
+        # print("get the job desc ############# {}".format(job_desc))
 
     if first_time:
         num_all_pages = await get_num_all_page(body)
@@ -185,6 +188,7 @@ async def run_indeed(query = 'python developer',first_time=False,
 
     
     if extract_jobdesc:
+        
         jobdesc = [x['job_desc'] for x in results ]
         job_col = ['id', 'job_desc']
         list_to_sql(jobdesc, table_name=f'{query_name}_job_desc', columns=job_col)
@@ -261,7 +265,9 @@ async def orchestrator(query = 'python developer'):
 
 
     while True:
+        # print("i'am in while loop")
         is_done,is_failed = await run_indeed(query=query, extract_jobdesc=True,limit=6)
+        # print("done extracting job description!")
         if is_failed:
             print("sorry, i am failing ...  ")
             return

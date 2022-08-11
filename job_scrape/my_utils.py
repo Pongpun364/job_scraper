@@ -2,12 +2,12 @@ import re
 import pandas as pd
 from storage import df_to_sql, df_from_sql, list_to_sql
 # print(sys.path)
-async def extract_id(url_path):
-    regex = r"([0-9a-z]+)\Sfccid"
-    my_match = re.findall(regex, url_path)
-    if not my_match:
-        return None
-    return my_match[0]
+# async def extract_id(url_path):
+#     regex = r"([0-9a-z]+)\Sfccid"
+#     my_match = re.findall(regex, url_path)
+#     if not my_match:
+#         return None
+#     return my_match[0]
 
 async def extract_salary(result):
     data = result.find('.salary-snippet', first=True)

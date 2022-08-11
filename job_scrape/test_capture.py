@@ -13,7 +13,7 @@ IMAGE_DIR = BASE_DIR / "uploads"
 EXE_PATH = str(BASE_DIR / "driver" / "chromedriver.exe")
 
 test_url = "https://th.indeed.com/jobs?q=javascript%20developer&start=0"
-
+test_url2 = "https://th.indeed.com/viewjob?jk=6cce83ab309371b3"
 
 async def get_user_agent():
     return UserAgent(verify_ssl=False).random
@@ -50,7 +50,7 @@ async def perform_scrape(session, url, delay):
 async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
     
     print("real time out used ==...", timeout)
-    service = services.Chromedriver(binary=EXE_PATH)
+    service = services.Chromedriver()
     browser = browsers.Chrome()
     my_user_agent = await get_user_agent()
     browser.capabilities = {
@@ -70,7 +70,7 @@ async def scraper(url, i=-1, timeout = 120, start=None, delay=15):
 
 def main():
     
-    screenshot = asyncio.run(scraper(test_url, timeout=50))
+    screenshot = asyncio.run(scraper(test_url2, timeout=50))
     # print(type(screenshot))
     IMAGE_DIR.mkdir(exist_ok=True)
     img = Image.open(screenshot)

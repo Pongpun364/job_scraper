@@ -6,7 +6,7 @@ celery==4.4.7
 aiofiles
 redis
 pandas
-requests_html
+requests-html
 python-dotenv
 python-slugify
 fake-useragent
