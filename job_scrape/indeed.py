@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 from my_logging import  set_arsenic_log_level
 from scraper import scraper
 from storage import df_from_sql, df_to_sql, list_to_sql
-from my_utils import extract_id, extract_salary,\
+from my_utils import extract_salary,\
     firsttime_query, \
     get_list_urls, get_saved_urls,\
     extract_salary_one
